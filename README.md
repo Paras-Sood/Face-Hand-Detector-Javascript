@@ -2,6 +2,7 @@
 Made a basic Face and Hand detection app.js using handtrack.js
 
 The app.js will play Stop it sound when it detects hand on the camera.
-This was made to stop nail biters so as they get warned when they bring their hand near their face.
+
+This was made to stop nail biters so as they get warned when they bring their hand near their face.(Will somewhat help in preventing their habit of biting nails)
 
 Library - https://github.com/victordibia/handtrack.js/
