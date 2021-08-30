@@ -13,9 +13,9 @@ let model;
 
 const defaultParams = {
     flipHorizontal: true,
-    imageScaleFactor: 0.5,
+    imageScaleFactor: 0.7,
     maxNumBoxes: 20,
-    iouThreshold: 0.5,
+    iouThreshold: 0.2,
     scoreThreshold: 0.4,
 };
 
