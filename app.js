@@ -18,13 +18,14 @@ const defaultParams = {
     iouThreshold: 0.2,
     scoreThreshold: 0.4,
 };
-
-
+var start=1;
+var start_int;
 handTrack.startVideo(video).then(status =>{
     if(status){
+        console.log("In ",start)
         navigator.getUserMedia({video:{}} , stream =>{
             video.srcObject = stream;
-            setInterval(runDetection,100)
+            start_int=setInterval(runDetection,100)
         },
         err=>console.log(err)
         );
@@ -51,3 +52,19 @@ function runDetection(){
 handTrack.load(defaultParams).then(lmodel => {
     model = lmodel;
 });
+
+document.addEventListener('DOMContentLoaded',()=>{
+    document.querySelector('#startstop').onclick=function(){
+        start=(start+1)%2;
+        if(start===1)
+        {
+            start_int=setInterval(runDetection,100)
+            this.innerHTML="Stop"
+        }
+        else{
+            this.innerHTML="Start"
+            clearInterval(start_int)
+        }
+        console.log(start)
+    }
+})
